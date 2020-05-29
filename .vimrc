@@ -157,7 +157,6 @@ set smarttab
 set noswapfile
 set t_Co=256
 set laststatus=2
-set noshowmode
 set list lcs=trail:·,space:·,tab:-→
 set colorcolumn=80,100
 set ttyfast
@@ -171,5 +170,6 @@ set splitbelow
 set splitright
 set foldmethod=indent
 set foldlevelstart=80
+set noshowmode
 filetype plugin on
 
