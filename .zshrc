@@ -5,6 +5,9 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/.dronerc
 
+#Alias para abrir el explorador de archivos en una carpeta a la MacOS Style
+alias open='explorer.exe'
+
 # Mejores colores de folders
 LS_COLORS='ow=01;36;40'
 
