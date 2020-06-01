@@ -12,7 +12,7 @@
       "backgroundImage": "C:\\Users\\carlo\\Pictures\\80994.jpg",
       "backgroundImageOpacity" : 0.1,
       "closeOnExit": true,
-      "fontSize": 10,
+      "fontSize": 11,
       "scrollbarState": "hidden",
       "colorScheme": "OneHalfDark"
     },
@@ -33,7 +33,7 @@
       },
       {
         "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-        "hidden": false,
+        "hidden": true,
         "name": "Azure Cloud Shell",
         "source": "Windows.Terminal.Azure"
       },
@@ -42,10 +42,17 @@
         "hidden": false,
         "name": "Ubuntu-18.04",
         "source": "Windows.Terminal.Wsl",
+        "commandline" : "wsl.exe ~"
+      },
+      {
+        "guid": "{83f4a1a9-f66e-4e20-92ce-2e119d2c474a}",
+        "hidden": false,
+        "name": "Vintage",
         "commandline" : "wsl.exe ~",
-        "fontFace_":  "PxPlus IBM VGA8",
-        "fontSize": 11,
-        "experimental.retroTerminalEffect": 0
+        "fontFace":  "PxPlus IBM VGA8",
+        "fontSize": 16,
+        "icon": "C:\\Users\\carlo\\Pictures\\cathode_300.png",
+        "experimental.retroTerminalEffect": 1
       }
     ]
   },
@@ -82,3 +89,4 @@
     { "command": "newTab", "keys": ["ctrl+t"] }
   ]
 }
+
