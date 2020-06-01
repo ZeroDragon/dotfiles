@@ -15,7 +15,7 @@ LS_COLORS='ow=01;36;40'
 stty -ixon
 
 # para el FZF dentro de VIM
-FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node_modules -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node_modules -g ""'
 
 # path de deno
 export DENO_INSTALL="$HOME/.deno"
