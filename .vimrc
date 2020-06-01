@@ -11,11 +11,11 @@ Plug 'itchyny/lightline.vim' "           Lighline (eyecandy)
 Plug 'moll/vim-bbye' "                   Better Buffer control
 Plug 'ap/vim-buftabline' "               Buffers as tabs (eyecandy)
 Plug 'zerodragon/onehalfdark' "          Color Theme
-Plug 'vimwiki/vimwiki' "                 Wiki for notes and stuff
 Plug 'terryma/vim-multiple-cursors' "    Multiple cursors
 Plug 'ap/vim-css-color' "                Display CSS hex codes as colors
 Plug 'preservim/nerdtree' "              File tree display
 Plug 'preservim/nerdcommenter' "         Comments for different languages
+Plug 'lervag/wiki.vim' "                 Personal Wiki
 call plug#end()
 
 " Enable colorscheme and true colors
@@ -74,12 +74,17 @@ let g:lightline                          = {'colorscheme': 'onehalfdark'}
 let g:NERDTreeDirArrowExpandable         = '►'
 let g:NERDTreeDirArrowCollapsible        = '▼'
 let g:ale_completion_tsserver_autoimport = 1
-let g:vimwiki_list                       = [{'path': '~/vimwiki/', 'syntax': 'markdown'}]
 let g:NERDCreateDefaultMappings          = 0
 let g:multi_cursor_next_key              = '<C-d>'
 let g:multi_cursor_start_word_key        = '<C-d>'
 let g:multi_cursor_quit_key              = '<Esc>'
 let g:ft                                 = ''
+let g:wiki_root                          = '~/vimwiki'
+let g:wiki_mappings_local = {
+      \ '<plug>(wiki-list-toggle)': '<c-t>',
+      \ 'i_<plug>(wiki-list-toggle)': '<c-t>',
+      \}
+autocmd BufNewFile,BufRead *.wiki set syntax=markdown
 
 " Hack to migrate yank to windows clipboard
 let s:clip = '/c/Windows/System32/clip.exe' 
@@ -171,5 +176,4 @@ set splitright
 set foldmethod=indent
 set foldlevelstart=80
 set noshowmode
-filetype plugin on
 
