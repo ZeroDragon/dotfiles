@@ -16,6 +16,7 @@ Plug 'ap/vim-css-color' "                Display CSS hex codes as colors
 Plug 'preservim/nerdtree' "              File tree display
 Plug 'preservim/nerdcommenter' "         Comments for different languages
 Plug 'lervag/wiki.vim' "                 Personal Wiki
+Plug 'gabrielelana/vim-markdown'
 call plug#end()
 
 " Enable colorscheme and true colors
@@ -35,6 +36,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 function! NERDTreeHighlightFile(extension, fg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension .' guibg=NONE guifg='. a:fg
   exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+" Wiki.vim automatic wiki on projects
+function! WikiRoot(local, root)
+  let l:localDir = finddir(a:local, ';./')
+  return !empty(l:localDir) ? l:localDir : a:root
 endfunction
 
 call NERDTreeHighlightFile('pug', '#AE403F')
@@ -79,7 +86,7 @@ let g:multi_cursor_next_key              = '<C-d>'
 let g:multi_cursor_start_word_key        = '<C-d>'
 let g:multi_cursor_quit_key              = '<Esc>'
 let g:ft                                 = ''
-let g:wiki_root                          = '~/vimwiki'
+let g:wiki_root                          = WikiRoot('wiki', '~/myWiki')
 let g:wiki_mappings_local = {
       \ '<plug>(wiki-list-toggle)': '<c-t>',
       \ 'i_<plug>(wiki-list-toggle)': '<c-t>',
