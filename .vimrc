@@ -38,10 +38,10 @@ function! NERDTreeHighlightFile(extension, fg)
   exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
-" Wiki.vim automatic wiki on projects
-function! WikiRoot(local, root)
-  let l:localDir = finddir(a:local, ';./')
-  return !empty(l:localDir) ? l:localDir : a:root
+" Wiki Root Function
+function! WikiRoot()
+  let l:local = finddir('wiki', ';./')
+  return !empty(l:local) ? l:local : '~/myWiki'
 endfunction
 
 call NERDTreeHighlightFile('pug', '#AE403F')
@@ -86,7 +86,7 @@ let g:multi_cursor_next_key              = '<C-d>'
 let g:multi_cursor_start_word_key        = '<C-d>'
 let g:multi_cursor_quit_key              = '<Esc>'
 let g:ft                                 = ''
-let g:wiki_root                          = WikiRoot('wiki', '~/myWiki')
+let g:wiki_root                          = 'WikiRoot'
 let g:wiki_mappings_local = {
       \ '<plug>(wiki-list-toggle)': '<c-t>',
       \ 'i_<plug>(wiki-list-toggle)': '<c-t>',
@@ -151,6 +151,7 @@ inoremap < <><left>
 nnoremap <silent> <leader>q :Bdelete<CR>
 nnoremap <silent> <leader>n :set relativenumber!<CR>
 nnoremap <silent> <leader><backspace> :set nowrap!<CR>
+nnoremap <silent> <c-w>v :vnew<CR>
 command! Q :q
 nnoremap <c-z> :u<CR>
 inoremap <c-z> <Esc>:u<CR>i
