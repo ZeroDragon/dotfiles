@@ -8,8 +8,18 @@ source $HOME/.dronerc
 #Alias para abrir el explorador de archivos en una carpeta a la MacOS Style
 alias open='explorer.exe'
 
+# Bat instalar en https://github.com/sharkdp/bat
+# less a bat
+command -v bat > /dev/null && alias less='bat'
+# cat a bat
+command -v bat > /dev/null && alias cat='bat --pager=never'
+
+# LSD instalar en https://github.com/Peltoche/lsd
 # Mejores colores de folders
-LS_COLORS='ow=01;36;40'
+command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
+
+# LS_Colors instalar en https://github.com/trapd00r/LS_COLORS
+. "/home/zero/.local/share/lscolors.sh"
 
 # permite usar control + s y control + q para otras cosas
 stty -ixon
