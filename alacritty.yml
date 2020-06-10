@@ -53,3 +53,4 @@ key_bindings:
   - { key: V,        mods: Control, action: Paste            }
   - { key: C,        mods: Control, action: Copy             }
   - { key: C,        mods: Alt,     chars: "\x03"            }
+  - { key: W,        mods: Shift|Control,     action: Quit             }
