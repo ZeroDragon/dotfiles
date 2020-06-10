@@ -19,7 +19,7 @@ colors:
    yellow: '#e5c07b'
    blue: '#61afef'
    purple: '#c678dd'
-   magenta: '#c397d8'
+   magenta: '#c678dd'
    cyan: '#56b6c2'
    white: '#dcdfe4'
   bright:
@@ -29,7 +29,7 @@ colors:
    yellow: '#e5c07b'
    blue: '#61afef'
    purple: '#c678dd'
-   magenta: '#b77ee0'
+   magenta: '#c678dd'
    cyan: '#56b6c2'
    white: '#dcdfe4' 
 background_opacity: 0.95
@@ -48,9 +48,8 @@ mouse:
      program: explorer
 mouse_bindings:
  - { mouse: Right, mods: Shift, action: PasteSelection }
- - { mouse: Right, action: Copy }
-
+ - { mouse: Right,              action: Copy           }
 key_bindings:
   - { key: V,        mods: Control, action: Paste            }
   - { key: C,        mods: Control, action: Copy             }
-  - { key: C,        mods: Alt,     chars: "\x03"                 }
+  - { key: C,        mods: Alt,     chars: "\x03"            }
