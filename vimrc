@@ -138,9 +138,9 @@ map <C-f> :Ag<CR>
 map <C-q> :qa<CR>
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>
-vmap <C-_> <plug>NERDCommenterToggle
-nmap <C-_> <plug>NERDCommenterToggle
-vmap <C-?> <plug>NERDCommenterSexy
+vmap <leader>/ <plug>NERDCommenterToggle
+nmap <leader>/ <plug>NERDCommenterToggle
+vmap <leader>? <plug>NERDCommenterSexy
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ` ``<left>
