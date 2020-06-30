@@ -4,6 +4,7 @@ plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 source $HOME/.dronerc
+eval "$(direnv hook zsh)"
 
 #Alias para abrir el explorador de archivos en una carpeta a la MacOS Style
 alias open='explorer.exe'

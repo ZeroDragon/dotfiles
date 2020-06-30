@@ -1,9 +1,4 @@
 call plug#begin()
-Plug 'dense-analysis/ale' "              Lintern
-Plug 'digitaltoad/vim-pug' "             Pug Support
-Plug 'elixir-editors/vim-elixir' "       Elixir Support
-Plug 'posva/vim-vue' "                   Vue support
-Plug 'leafgarland/typescript-vim' "      Typescrpt Support
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fzf
 Plug 'junegunn/fzf.vim' "                Fzf for vim
 Plug 'airblade/vim-gitgutter' "          Git in gutter
@@ -16,7 +11,12 @@ Plug 'ap/vim-css-color' "                Display CSS hex codes as colors
 Plug 'preservim/nerdtree' "              File tree display
 Plug 'preservim/nerdcommenter' "         Comments for different languages
 Plug 'lervag/wiki.vim' "                 Personal Wiki
-Plug 'gabrielelana/vim-markdown'
+Plug 'gabrielelana/vim-markdown' "       Markdown
+Plug 'wavded/vim-stylus' "               Stylus
+Plug 'dense-analysis/ale' "              Lintern
+Plug 'digitaltoad/vim-pug' "             Pug Support
+Plug 'elixir-editors/vim-elixir' "       Elixir Support
+Plug 'posva/vim-vue' "                   Vue support
 call plug#end()
 
 " Enable colorscheme and true colors
@@ -115,7 +115,6 @@ function! NERDCommenter_before()
     endif
   endif
 endfunction
-
 function! NERDCommenter_after()
   if g:ft == 'vue'
     setf vue
@@ -127,11 +126,11 @@ endfunction
 map <silent> <C-b> :NERDTreeToggle<CR>
 imap <silent> <C-b> <Esc>:NERDTreeToggle<CR>
 map <Space> i
-nmap 1 <Plug>BufTabLine.Go(1)
-nmap 2 <Plug>BufTabLine.Go(2)
-nmap 3 <Plug>BufTabLine.Go(3)
-nmap 4 <Plug>BufTabLine.Go(4)
-nmap 5 <Plug>BufTabLine.Go(5)
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
 map <C-n> :bnext<CR>
 map <C-p> :Files<CR>
 map <C-f> :Ag<CR>
@@ -184,4 +183,3 @@ set splitright
 set foldmethod=indent
 set foldlevelstart=80
 set noshowmode
-
