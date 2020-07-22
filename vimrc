@@ -11,7 +11,6 @@ Plug 'ap/vim-css-color' "                Display CSS hex codes as colors
 Plug 'preservim/nerdtree' "              File tree display
 Plug 'preservim/nerdcommenter' "         Comments for different languages
 Plug 'lervag/wiki.vim' "                 Personal Wiki
-Plug 'gabrielelana/vim-markdown' "       Markdown
 Plug 'wavded/vim-stylus' "               Stylus
 Plug 'dense-analysis/ale' "              Lintern
 Plug 'digitaltoad/vim-pug' "             Pug Support
@@ -44,18 +43,18 @@ function! WikiRoot()
   return !empty(l:local) ? l:local : '~/myWiki'
 endfunction
 
-call NERDTreeHighlightFile('pug', '#AE403F')
-call NERDTreeHighlightFile('md', '#689FB6')
-call NERDTreeHighlightFile('yml', '#F09F17')
-call NERDTreeHighlightFile('config', '#666666')
-call NERDTreeHighlightFile('json', '#D4843E')
-call NERDTreeHighlightFile('html', '#AE403F')
-call NERDTreeHighlightFile('sass', '#689FB6')
-call NERDTreeHighlightFile('css', '#689FB6')
-call NERDTreeHighlightFile('js', '#F16529')
-call NERDTreeHighlightFile('php', '#834F79')
+call NERDTreeHighlightFile('pug',        '#AE403F')
+call NERDTreeHighlightFile('md',         '#689FB6')
+call NERDTreeHighlightFile('yml',        '#F09F17')
+call NERDTreeHighlightFile('config',     '#666666')
+call NERDTreeHighlightFile('json',       '#D4843E')
+call NERDTreeHighlightFile('html',       '#AE403F')
+call NERDTreeHighlightFile('sass',       '#689FB6')
+call NERDTreeHighlightFile('css',        '#689FB6')
+call NERDTreeHighlightFile('js',         '#F16529')
+call NERDTreeHighlightFile('php',        '#834F79')
 call NERDTreeHighlightFile('Dockerfile', '#44788E')
-call NERDTreeHighlightFile('vue', '#42B883')
+call NERDTreeHighlightFile('vue',        '#42B883')
 
 " Editor color settings
 highlight TabLineFill guibg=#1e1f2a ctermbg=236
@@ -82,6 +81,9 @@ let g:NERDTreeDirArrowExpandable         = '►'
 let g:NERDTreeDirArrowCollapsible        = '▼'
 let g:ale_completion_tsserver_autoimport = 1
 let g:NERDCreateDefaultMappings          = 0
+let NERDSpaceDelims                      = 1
+let g:buftabline_numbers                 = 2
+let g:buftabline_show                    = 1
 let g:multi_cursor_next_key              = '<C-d>'
 let g:multi_cursor_start_word_key        = '<C-d>'
 let g:multi_cursor_quit_key              = '<Esc>'
@@ -131,12 +133,20 @@ nmap <leader>2 <Plug>BufTabLine.Go(2)
 nmap <leader>3 <Plug>BufTabLine.Go(3)
 nmap <leader>4 <Plug>BufTabLine.Go(4)
 nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
 map <C-n> :bnext<CR>
 map <C-p> :Files<CR>
 map <C-f> :Ag<CR>
+imap <C-p> <Esc>:Files<CR>
+imap <C-f> <Esc>:Ag<CR>
+nmap <del> i<del>
 map <C-q> :qa<CR>
 nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>
+imap <c-s> <Esc>:w<CR>i<right>
+imap <c-w> <Esc><c-w>
 vmap <leader>/ <plug>NERDCommenterToggle
 nmap <leader>/ <plug>NERDCommenterToggle
 vmap <leader>? <plug>NERDCommenterSexy
@@ -145,7 +155,7 @@ inoremap ' ''<left>
 inoremap ` ``<left>
 inoremap ( ()<left>
 inoremap [ []<left>
-inoremap { {}<left><space><left><space>
+inoremap { {}<left>
 inoremap < <><left>
 nnoremap <silent> <leader>q :Bdelete<CR>
 nnoremap <silent> <leader>n :set relativenumber!<CR>
