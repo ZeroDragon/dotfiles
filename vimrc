@@ -96,13 +96,13 @@ let g:wiki_mappings_local = {
 autocmd BufNewFile,BufRead *.wiki set syntax=markdown
 
 " Hack to migrate yank to windows clipboard
-let s:clip = '/c/Windows/System32/clip.exe' 
-if executable(s:clip)
-  augroup WSLYank
-    autocmd!
-    autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
-  augroup END
-end
+" let s:clip = '/c/Windows/System32/clip.exe' 
+" if executable(s:clip)
+  " augroup WSLYank
+    " autocmd!
+    " autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
+  " augroup END
+" end
 
 " NERDComenter support for *.vue files
 function! NERDCommenter_before()
@@ -171,6 +171,7 @@ set shiftwidth=2
 set expandtab
 set syntax=on
 set mouse=a
+set bs=2
 set showmatch
 set autoindent
 set smartindent
@@ -193,3 +194,4 @@ set splitright
 set foldmethod=indent
 set foldlevelstart=80
 set noshowmode
+set clipboard=unnamed
