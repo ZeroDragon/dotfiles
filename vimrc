@@ -18,6 +18,9 @@ Plug 'elixir-editors/vim-elixir' "       Elixir Support
 Plug 'posva/vim-vue' "                   Vue support
 call plug#end()
 
+scriptencoding utf-8
+set encoding=utf-8
+
 " Enable colorscheme and true colors
 colorscheme onehalfdark
 if exists('+termguicolors')

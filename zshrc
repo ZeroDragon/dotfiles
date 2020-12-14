@@ -26,6 +26,9 @@ command -v bat > /dev/null && alias cat='bat --pager=never'
 # Mejores colores de folders
 command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
 
+# LS colors (referencia al mismo path donde está este archivo)
+. "/Users/carlosflores/dotfiles/lscolors.sh"
+
 # permite usar control + s y control + q para otras cosas
 stty -ixon
 
@@ -41,3 +44,9 @@ function __init_nvm() {
   unset -f __init_nvm
 }
 alias node='__init_nvm &&'node
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/carlosflores/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/carlosflores/Documents/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/carlosflores/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/carlosflores/Documents/google-cloud-sdk/completion.zsh.inc'; fi
