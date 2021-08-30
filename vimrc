@@ -19,6 +19,20 @@ Plug 'posva/vim-vue' "                   Vue support
 Plug 'jiangmiao/auto-pairs' "            Autopairs Plugin
 call plug#end()
 
+scriptencoding utf-8
+set encoding=utf-8
+
+" Change cursor shape between insert and normal mode in iTerm2.app
+if $TERM_PROGRAM =~ "iTerm"
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+endif
+
 " Enable colorscheme and true colors
 colorscheme onehalfdark
 if exists('+termguicolors')
@@ -52,6 +66,7 @@ call NERDTreeHighlightFile('json',       '#D4843E')
 call NERDTreeHighlightFile('html',       '#AE403F')
 call NERDTreeHighlightFile('sass',       '#689FB6')
 call NERDTreeHighlightFile('css',        '#689FB6')
+call NERDTreeHighlightFile('styl',       '#ff6347')
 call NERDTreeHighlightFile('js',         '#F16529')
 call NERDTreeHighlightFile('php',        '#834F79')
 call NERDTreeHighlightFile('Dockerfile', '#44788E')
@@ -172,6 +187,7 @@ set shiftwidth=2
 set expandtab
 set syntax=on
 set mouse=a
+set bs=2
 set showmatch
 set autoindent
 set smartindent
@@ -194,3 +210,4 @@ set splitright
 set foldmethod=indent
 set foldlevelstart=80
 set noshowmode
+set clipboard=unnamed
