@@ -3,6 +3,7 @@ ZSH_THEME="zero"
 plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
+source $HOME/sites/personal/spotify-dl/.envrc
 source $HOME/.dronerc
 eval "$(direnv hook zsh)"
 
