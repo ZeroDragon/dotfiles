@@ -28,7 +28,7 @@ command -v bat > /dev/null && alias cat='bat --pager=never'
 command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
 
 # LS colors (referencia al mismo path donde está este archivo)
-. "/Users/carlosflores/dotfiles/lscolors.sh"
+. "/home/zero/dotfiles/lscolors.sh"
 
 # permite usar control + s y control + q para otras cosas
 stty -ixon

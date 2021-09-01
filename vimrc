@@ -6,7 +6,6 @@ Plug 'itchyny/lightline.vim' "           Lighline (eyecandy)
 Plug 'moll/vim-bbye' "                   Better Buffer control
 Plug 'ap/vim-buftabline' "               Buffers as tabs (eyecandy)
 Plug 'zerodragon/onehalfdark' "          Color Theme
-" Plug 'terryma/vim-multiple-cursors' "    Multiple cursors
 Plug 'ap/vim-css-color' "                Display CSS hex codes as colors
 Plug 'preservim/nerdtree' "              File tree display
 Plug 'preservim/nerdcommenter' "         Comments for different languages
@@ -17,6 +16,7 @@ Plug 'digitaltoad/vim-pug' "             Pug Support
 Plug 'elixir-editors/vim-elixir' "       Elixir Support
 Plug 'posva/vim-vue' "                   Vue support
 Plug 'jiangmiao/auto-pairs' "            Autopairs Plugin
+Plug 'preservim/vimux' "                 Vimux para usar tmux desde vim
 call plug#end()
 
 scriptencoding utf-8
@@ -100,9 +100,6 @@ let g:NERDCreateDefaultMappings          = 0
 let NERDSpaceDelims                      = 1
 let g:buftabline_numbers                 = 2
 let g:buftabline_show                    = 1
-" let g:multi_cursor_next_key              = '<C-d>'
-" let g:multi_cursor_start_word_key        = '<C-d>'
-" let g:multi_cursor_quit_key              = '<Esc>'
 let g:ft                                 = ''
 let g:wiki_root                          = 'WikiRoot'
 let g:wiki_mappings_local = {
@@ -166,13 +163,6 @@ imap <c-w> <Esc><c-w>
 vmap <leader>/ <plug>NERDCommenterToggle
 nmap <leader>/ <plug>NERDCommenterToggle
 vmap <leader>? <plug>NERDCommenterSexy
-" inoremap " ""<left>
-" inoremap ' ''<left>
-" inoremap ` ``<left>
-" inoremap ( ()<left>
-" inoremap [ []<left>
-" inoremap { {}<left>
-" inoremap < <><left>
 nnoremap <silent> <leader>q :Bdelete<CR>
 nnoremap <silent> <leader>n :set relativenumber!<CR>
 nnoremap <silent> <leader><backspace> :set nowrap!<CR>
@@ -180,7 +170,7 @@ nnoremap <silent> <c-w>v :vnew<CR>
 command! Q :q
 nnoremap <c-z> :u<CR>
 inoremap <c-z> <Esc>:u<CR>i
-
+map <Leader>, :w<CR>:VimuxInterruptRunner<CR>:VimuxInterruptRunner<CR>:call VimuxSendKeys("Up")<CR>:call VimuxSendKeys("Enter")<CR>
 " Custom settings
 set tabstop=2
 set shiftwidth=2
