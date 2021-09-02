@@ -3,7 +3,7 @@ ZSH_THEME="zero"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-source $HOME/sites/personal/spotify-dl/.envrc
+# source $HOME/sites/personal/spotify-dl/.envrc
 source $HOME/.dronerc
 eval "$(direnv hook zsh)"
 
@@ -16,6 +16,8 @@ command -v bat > /dev/null && alias cat='bat --pager=never'
 # LSD instalar en https://github.com/Peltoche/lsd
 # Mejores colores de folders
 command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
+
+alias vim=nvim
 
 # LS colors (referencia al mismo path donde está este archivo)
 . "/Users/carlos/dotfiles/lscolors.sh"

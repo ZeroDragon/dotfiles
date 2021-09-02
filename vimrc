@@ -196,7 +196,7 @@ set list lcs=trail:·,space:·,tab:-→
 set colorcolumn=80,100
 set ttyfast
 set lazyredraw
-set ttyscroll=3
+" set ttyscroll=3
 set regexpengine=1
 set nocompatible
 set nowrap
