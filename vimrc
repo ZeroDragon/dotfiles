@@ -150,11 +150,10 @@ nmap <leader>6 <Plug>BufTabLine.Go(6)
 nmap <leader>7 <Plug>BufTabLine.Go(7)
 nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
-map <C-n> :bnext<CR>
-map <C-p> :Files<CR>
-map <C-f> :Ag<CR>
-imap <C-p> <Esc>:Files<CR>
-imap <C-f> <Esc>:Ag<CR>
+map <silent> <C-n> :bnext<CR>
+map <silent> <C-p> :Files<CR>
+map <silent> <C-;> :Buffers<CR>
+map <silent> <C-f> :Ag<CR>
 nmap <del> i<del>
 map <C-q> :qa<CR>
 nmap <c-s> :w<CR>
@@ -170,7 +169,10 @@ nnoremap <silent> <c-w>v :vnew<CR>
 command! Q :q
 nnoremap <c-z> :u<CR>
 inoremap <c-z> <Esc>:u<CR>i
-map <Leader>, :w<CR>:VimuxInterruptRunner<CR>:VimuxInterruptRunner<CR>:call VimuxSendKeys("Up")<CR>:call VimuxSendKeys("Enter")<CR>
+map <silent> <leader>[ :VimuxPromptCommand<CR>
+map <silent> <leader>{ :VimuxInterruptRunner<CR>:VimuxInterruptRunner<CR>
+map <silent> <leader>} :VimuxCloseRunner<CR>
+map <silent> <leader>] :VimuxOpenRunner<CR>:call VimuxSendKeys("Up")<CR>:call VimuxSendKeys("Enter")<CR>
 " Custom settings
 set tabstop=2
 set shiftwidth=2
