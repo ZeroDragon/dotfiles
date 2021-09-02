@@ -1,0 +1,10 @@
+# ln -s thisfile ~/.config/youtube-dl/config
+
+# Always extract audio
+-x
+
+# Download to current dir
+-o ./%(title)s.%(ext)s
+
+# convert to mp3
+--audio-format mp3

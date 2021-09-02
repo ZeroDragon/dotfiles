@@ -15,6 +15,8 @@ Plug 'dense-analysis/ale' "              Lintern
 Plug 'digitaltoad/vim-pug' "             Pug Support
 Plug 'elixir-editors/vim-elixir' "       Elixir Support
 Plug 'posva/vim-vue' "                   Vue support
+Plug 'jiangmiao/auto-pairs' "            Autopairs Plugin
+Plug 'preservim/vimux' "                 Vimux para usar tmux desde vim
 call plug#end()
 
 scriptencoding utf-8
@@ -102,9 +104,6 @@ let g:NERDCreateDefaultMappings          = 0
 let NERDSpaceDelims                      = 1
 let g:buftabline_numbers                 = 2
 let g:buftabline_show                    = 1
-let g:multi_cursor_next_key              = '<C-d>'
-let g:multi_cursor_start_word_key        = '<C-d>'
-let g:multi_cursor_quit_key              = '<Esc>'
 let g:ft                                 = ''
 let g:wiki_root                          = 'WikiRoot'
 let g:wiki_mappings_local = {
@@ -114,13 +113,13 @@ let g:wiki_mappings_local = {
 autocmd BufNewFile,BufRead *.wiki set syntax=markdown
 
 " Hack to migrate yank to windows clipboard
-" let s:clip = '/c/Windows/System32/clip.exe' 
-" if executable(s:clip)
-  " augroup WSLYank
-    " autocmd!
-    " autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
-  " augroup END
-" end
+let s:clip = '/c/Windows/System32/clip.exe' 
+if executable(s:clip)
+  augroup WSLYank
+    autocmd!
+    autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
+  augroup END
+end
 
 " NERDComenter support for *.vue files
 function! NERDCommenter_before()
@@ -155,11 +154,10 @@ nmap <leader>6 <Plug>BufTabLine.Go(6)
 nmap <leader>7 <Plug>BufTabLine.Go(7)
 nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
-map <C-n> :bnext<CR>
-map <C-p> :Files<CR>
-map <C-f> :Ag<CR>
-imap <C-p> <Esc>:Files<CR>
-imap <C-f> <Esc>:Ag<CR>
+map <silent> <C-n> :bnext<CR>
+map <silent> <C-p> :Files<CR>
+map <silent> <C-;> :Buffers<CR>
+map <silent> <C-f> :Ag<CR>
 nmap <del> i<del>
 map <C-q> :qa<CR>
 nmap <c-s> :w<CR>
@@ -168,13 +166,6 @@ imap <c-w> <Esc><c-w>
 vmap <leader>/ <plug>NERDCommenterToggle
 nmap <leader>/ <plug>NERDCommenterToggle
 vmap <leader>? <plug>NERDCommenterSexy
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ` ``<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap < <><left>
 nnoremap <silent> <leader>q :Bdelete<CR>
 nnoremap <silent> <leader>n :set relativenumber!<CR>
 nnoremap <silent> <leader><backspace> :set nowrap!<CR>
@@ -182,7 +173,10 @@ nnoremap <silent> <c-w>v :vnew<CR>
 command! Q :q
 nnoremap <c-z> :u<CR>
 inoremap <c-z> <Esc>:u<CR>i
-
+map <silent> <leader>[ :VimuxPromptCommand<CR>
+map <silent> <leader>{ :VimuxInterruptRunner<CR>:VimuxInterruptRunner<CR>
+map <silent> <leader>} :VimuxCloseRunner<CR>
+map <silent> <leader>] :VimuxOpenRunner<CR>:call VimuxSendKeys("Up")<CR>:call VimuxSendKeys("Enter")<CR>
 " Custom settings
 set tabstop=2
 set shiftwidth=2

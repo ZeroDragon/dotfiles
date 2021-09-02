@@ -3,6 +3,7 @@ ZSH_THEME="zero"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
+source $HOME/sites/personal/spotify-dl/.envrc
 source $HOME/.dronerc
 eval "$(direnv hook zsh)"
 
@@ -31,6 +32,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# lazy load de node
+# export NVM_DIR="$HOME/.nvm"
+# . "$NVM_DIR/bash_completion"
+# function __init_nvm() { 
+  # unalias node
+  # . "$NVM_DIR/nvm.sh"
+  # unset -f __init_nvm
+# }
+# alias node='__init_nvm &&'node
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/carlos/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/carlos/Documents/google-cloud-sdk/path.zsh.inc'; fi
