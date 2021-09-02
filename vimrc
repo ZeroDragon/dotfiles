@@ -69,6 +69,10 @@ call NERDTreeHighlightFile('js',         '#F16529')
 call NERDTreeHighlightFile('php',        '#834F79')
 call NERDTreeHighlightFile('Dockerfile', '#44788E')
 call NERDTreeHighlightFile('vue',        '#42B883')
+call NERDTreeHighlightFile('jsx',        '#61dafb')
+call NERDTreeHighlightFile('tsx',        '#3178c6')
+call NERDTreeHighlightFile('ts',         '#3178c6')
+call NERDTreeHighlightFile('svg',        '#F7A332')
 
 " Editor color settings
 highlight TabLineFill guibg=#1e1f2a ctermbg=236
