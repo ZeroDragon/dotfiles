@@ -17,6 +17,7 @@ Plug 'elixir-editors/vim-elixir' "       Elixir Support
 Plug 'posva/vim-vue' "                   Vue support
 Plug 'jiangmiao/auto-pairs' "            Autopairs Plugin
 Plug 'preservim/vimux' "                 Vimux para usar tmux desde vim
+Plug 'sonph/onehalf', { 'rtp': 'vim' } " Onehalf
 call plug#end()
 
 scriptencoding utf-8
