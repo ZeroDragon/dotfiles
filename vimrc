@@ -177,6 +177,8 @@ map <silent> <leader>[ :VimuxPromptCommand<CR>
 map <silent> <leader>{ :VimuxInterruptRunner<CR>:VimuxInterruptRunner<CR>
 map <silent> <leader>} :VimuxCloseRunner<CR>
 map <silent> <leader>] :VimuxOpenRunner<CR>:call VimuxSendKeys("Up")<CR>:call VimuxSendKeys("Enter")<CR>
+map <silent> <C-\> :VimuxOpenRunner<CR>:call VimuxSendKeys("Up")<CR>:call VimuxSendKeys("Enter")<CR>
+imap <silent> <C-\> <ESC>:VimuxOpenRunner<CR>:call VimuxSendKeys("Up")<CR>:call VimuxSendKeys("Enter")<CR>i
 " Custom settings
 set tabstop=2
 set shiftwidth=2

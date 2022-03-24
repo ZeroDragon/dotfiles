@@ -53,7 +53,7 @@
         "fontSize": 16,
         "icon": "C:\\Users\\carlo\\Pictures\\cathode_300.png",
         "backgroundImageOpacity" : 0,
-        "experimental.retroTerminalEffect": 1
+        "experimental.retroTerminalEffect": false
       }
     ]
   },
