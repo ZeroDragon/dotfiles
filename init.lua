@@ -1,3 +1,5 @@
+-- Este archivo es la configuración del hammerspoon
+
 leader = {"cmd", "alt", "ctrl"}
 
 hs.hotkey.bind(leader, "R", function() hs.reload() end)
@@ -15,12 +17,15 @@ functions = {
       frame.w = max.w / 2
       return frame
   end,
-  top = function(frame, max)
-      frame.y = max.y - (max.h / 2)
+  top = function(frame, max, frameCopy)
+      frame.x = frameCopy.x
+      frame.w = frameCopy.w
       frame.h = max.h / 2
       return frame
   end,
-  bottom = function(frame, max)
+  bottom = function(frame, max, frameCopy)
+      frame.x = frameCopy.x
+      frame.w = frameCopy.w
       frame.y = max.y + (max.h / 2)
       frame.h = max.h / 2
       return frame
@@ -50,11 +55,12 @@ function resizer (action)
     local frame = window:frame()
     local screen = window:screen()
     local max = screen:frame()
+    local frameCopy = window:frame()
     frame.x = max.x
     frame.y = max.y
     frame.w = max.w
     frame.h = max.h
-    window:setFrame(functions[action](frame, max))
+    window:setFrame(functions[action](frame, max, frameCopy))
   end
 end
 

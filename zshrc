@@ -28,5 +28,5 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node_modules -g "
 if [[ `uname` == "Linux" ]]; then
   source $DIR/zshrcWsl
 else
-  source $DIR/zshrcMac
+  source ~/dotfiles/zshrcMac
 fi
