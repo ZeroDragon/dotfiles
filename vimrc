@@ -173,6 +173,10 @@ nnoremap <silent> <c-w>v :vnew<CR>
 command! Q :q
 nnoremap <c-z> :u<CR>
 inoremap <c-z> <Esc>:u<CR>i
+map > >gv^
+map < <gv^
+map <Tab> >
+map <S-Tab> <
 map <silent> <leader>[ :VimuxPromptCommand<CR>
 map <silent> <leader>{ :VimuxInterruptRunner<CR>:VimuxInterruptRunner<CR>
 map <silent> <leader>} :VimuxCloseRunner<CR>
@@ -209,3 +213,4 @@ set foldmethod=indent
 set foldlevelstart=80
 set noshowmode
 set clipboard=unnamed
+set keymodel=startsel,stopsel
