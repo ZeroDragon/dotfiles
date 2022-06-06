@@ -39,6 +39,15 @@ functions = {
       frame.w = (max.w / 3) * 2
       return frame
   end,
+  oneThirdRight = function(frame, max)
+      frame.x = max.x + (max.w / 3) * 2
+      frame.w = max.w / 3
+      return frame
+  end,
+  twoThirdsLeft = function(frame, max)
+      frame.w = (max.w / 3) * 2
+      return frame
+  end,
   center = function(frame, max)
       frame.x = max.x + (max.w / 8) * 2
       frame.y = max.y + (max.h / 8) * 1
@@ -75,6 +84,8 @@ hs.fnutils.each({
   { key = "pad2", action = "bottom" },
   { key = "pad1", action = "oneThirdLeft" },
   { key = "pad3", action = "twoThirdsRight" },
+  { key = "pad7", action = "twoThirdsLeft" },
+  { key = "pad9", action = "oneThirdRight" },
   { key = "\\", action = "center" },
   { key = "pad5", action = "center" },
   { key = "RETURN", action = "maximize" },
