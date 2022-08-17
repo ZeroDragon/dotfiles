@@ -1,0 +1,24 @@
+# This is Git's per-user configuration file.
+[user]
+  name = Carlos Flores
+  email = carlos@floresbenavides.com
+[pull]
+	rebase = false
+[pager]
+	branch = false
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[init]
+	defaultBranch = main
+[push]
+	default = current
+[status]
+	short = true
+	showUntrackedFiles = all
+[color]
+  status = auto
+[color "status"]
+  changed = blue
+  untracked = green
