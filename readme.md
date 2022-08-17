@@ -19,6 +19,8 @@ ln -a dotfiles/tmux.conf .tmux.conf
 rm .gitconfig
 ln -a dotfiles/gitconfig .gitconfig
 
+rm .hammerspoon/init.lua
+ln -a dotfiles/init.lua .hammerspoon/init.lua
 ```
 
 wTerminal.json sirve para configurar la windows terminal.  
