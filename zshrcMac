@@ -3,6 +3,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim=nvim
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+alias tsk='/Users/carlos/Documents/taskwarrior-tui'
 
 # LS colors (referencia al mismo path donde está este archivo)
 . "/Users/carlos/dotfiles/lscolors.sh"

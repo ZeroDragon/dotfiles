@@ -7,7 +7,7 @@
 [pager]
 	branch = false
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [merge]
 	tool = vimdiff
 [init]
@@ -22,3 +22,5 @@
 [color "status"]
   changed = blue
   untracked = green
+[difftool]
+	prompt = false
