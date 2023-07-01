@@ -4,6 +4,12 @@ source $ZSH/oh-my-zsh.sh
 alias vim=nvim
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias tsk='/Users/carlos/Documents/taskwarrior-tui'
+alias sand:getpods='KUBECONFIG=sand.conf kubectl get pods'
+alias sand:logs='KUBECONFIG=sand.conf kubectl logs --follow'
+alias prod:getpods='KUBECONFIG=prod.conf kubectl get pods'
+alias prod:logs='KUBECONFIG=prod.conf kubectl logs --follow'
+alias rtd:getpods='kubectl get pods -A'
+alias rtd:logs='kubectl -n rtd logs -f'
 
 # LS colors (referencia al mismo path donde está este archivo)
 . "/Users/carlos/dotfiles/lscolors.sh"
@@ -20,3 +26,9 @@ if [ -f '/Users/carlos/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/carlos/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/carlos/Documents/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Add psql to path
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+export CLOUDSDK_PYTHON=/opt/homebrew/bin/python3.9
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True

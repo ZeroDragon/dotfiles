@@ -73,6 +73,11 @@ function resizer (action)
   end
 end
 
+function display()
+  local task = hs.execute("~/dotfiles/display.sh", true)
+  hs.alert.show("Cambiando monitores")
+end
+
 hs.fnutils.each({
   { key = "Left", action = "left" },
   { key = "pad4", action = "left" },
@@ -93,5 +98,7 @@ hs.fnutils.each({
 }, function(obj)
   hs.hotkey.bind(leader, obj.key, resizer(obj.action))
 end)
+
+hs.hotkey.bind(leader, "/", display)
 
 hs.alert.show("Bienvenido, Zero")

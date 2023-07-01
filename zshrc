@@ -15,7 +15,7 @@ command -v bat > /dev/null && alias cat='bat --pager=never'
 # Mejores colores de folders
 command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
 
-alias sgl='git log $(git describe --tags --abbrev=0)..HEAD --no-merges --oneline > new-in-this-release.log'
+alias git-prune='git fetch -p ; git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d'
 
 D=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 DIR="$D/dotfiles"

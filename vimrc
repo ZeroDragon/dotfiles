@@ -17,6 +17,7 @@ Plug 'elixir-editors/vim-elixir' "       Elixir Support
 Plug 'posva/vim-vue' "                   Vue support
 Plug 'jiangmiao/auto-pairs' "            Autopairs Plugin
 Plug 'preservim/vimux' "                 Vimux para usar tmux desde vim
+Plug 'pantharshit00/vim-prisma' "        Prisma support
 call plug#end()
 
 scriptencoding utf-8
@@ -145,6 +146,7 @@ endfunction
 map <silent> <C-b> :NERDTreeToggle<CR>
 imap <silent> <C-b> <Esc>:NERDTreeToggle<CR>
 map <Space> i
+:nnoremap <silent> i :noh<cr>i
 nmap <leader>1 <Plug>BufTabLine.Go(1)
 nmap <leader>2 <Plug>BufTabLine.Go(2)
 nmap <leader>3 <Plug>BufTabLine.Go(3)
