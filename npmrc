@@ -1,0 +1,2 @@
+# Stops npm from commiting new tag version when running npm version
+git-tag-version=false
