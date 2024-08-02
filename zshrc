@@ -30,3 +30,6 @@ if [[ `uname` == "Linux" ]]; then
 else
   source ~/dotfiles/zshrcMac
 fi
+
+# Eval zoxide
+eval "$(zoxide init --cmd cd zsh)"

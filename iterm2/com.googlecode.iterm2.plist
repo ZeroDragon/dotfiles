@@ -4,16 +4,6 @@
 <dict>
 	<key>AllowClipboardAccess</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>Control</key>
 	<integer>1</integer>
 	<key>Default Bookmark Guid</key>
@@ -269,6 +259,8 @@
 			<string>No</string>
 			<key>Custom Directory</key>
 			<string>No</string>
+			<key>Custom Locale</key>
+			<string>en_US</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -637,6 +629,8 @@
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
+			<key>Set Local Environment Vars</key>
+			<integer>2</integer>
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
