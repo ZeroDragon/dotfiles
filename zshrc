@@ -2,18 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="zero"
 
 # source $HOME/sites/personal/spotify-dl/.envrc
-source $HOME/.dronerc
-eval "$(direnv hook zsh)"
-
-# Bat instalar en https://github.com/sharkdp/bat
-# less a bat
-command -v bat > /dev/null && alias less='bat'
-# cat a bat
-command -v bat > /dev/null && alias cat='bat --pager=never'
-
-# LSD instalar en https://github.com/Peltoche/lsd
-# Mejores colores de folders
-command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
+# source $HOME/.dronerc
 
 alias git-prune='git fetch -p ; git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d'
 
@@ -31,5 +20,17 @@ else
   source ~/dotfiles/zshrcMac
 fi
 
-# Eval zoxide
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(direnv hook zsh)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# Bat instalar en https://github.com/sharkdp/bat
+# less a bat
+command -v bat > /dev/null && alias less='bat'
+# cat a bat
+command -v bat > /dev/null && alias cat='bat --pager=never'
+
+# LSD instalar en https://github.com/Peltoche/lsd
+# Mejores colores de folders
+command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
