@@ -21,7 +21,6 @@ else
 fi
 
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(direnv hook zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 

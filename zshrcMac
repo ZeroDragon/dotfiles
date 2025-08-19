@@ -31,3 +31,4 @@ if [ -f '/Users/carlos/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . 
 
 export CLOUDSDK_PYTHON=/opt/homebrew/bin/python3.9
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+eval "$(/opt/homebrew/bin/brew shellenv)"
