@@ -20,16 +20,17 @@ else
   source ~/dotfiles/zshrcMac
 fi
 
+# Activate Mise before its plugins
+eval "$(/Users/carlos/.local/bin/mise activate zsh)"
+
 eval "$(zoxide init --cmd cd zsh)"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-# Bat instalar en https://github.com/sharkdp/bat
+# Bat instalar con mise use bat
 # less a bat
 command -v bat > /dev/null && alias less='bat'
 # cat a bat
 command -v bat > /dev/null && alias cat='bat --pager=never'
 
-# LSD instalar en https://github.com/Peltoche/lsd
+# LSD instalar con mise use lsd
 # Mejores colores de folders
 command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
