@@ -1,4 +1,4 @@
-# ln -s ~/dotfiles/mise-toml config.toml
+# ln -s ~/dotfiles/mise-toml ~/.config/mise/config.toml
 [tools]
 bat = "0.25.0"
 lsd = "1.1.5"

@@ -1,7 +1,7 @@
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-alias vim=nvim
+# alias vim=nvim
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 
 alias sand:getpods='KUBECONFIG=sand.conf kubectl get pods'
