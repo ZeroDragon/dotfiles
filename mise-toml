@@ -1,11 +1,11 @@
 # ln -s ~/dotfiles/mise-toml ~/.config/mise/config.toml
 [tools]
 bat = "0.25.0"
-fd = "latest"
+fd = "10.2.0"
 fzf = "0.65.1"
-lazygit = "latest"
+lazygit = "0.54.2"
 lsd = "1.1.5"
 neovim = "0.11.3"
 node = "24.6.0"
-zig = "latest"
+zig = "0.15.1"
 zoxide = "0.9.8"
