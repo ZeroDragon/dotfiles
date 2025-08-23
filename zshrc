@@ -1,9 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="zero"
 
-# source $HOME/sites/personal/spotify-dl/.envrc
-# source $HOME/.dronerc
-
 alias git-prune='git fetch -p ; git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d'
 
 D=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
@@ -15,13 +12,13 @@ stty -ixon
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node_modules -g ""'
 
 if [[ `uname` == "Linux" ]]; then
-  source $DIR/zshrcWsl
+  source ~/dotfiles/zshrcWsl
 else
   source ~/dotfiles/zshrcMac
 fi
 
 # Activate Mise before its plugins
-eval "$(/Users/carlos/.local/bin/mise activate zsh)"
+eval "$($HOME/.local/bin/mise activate zsh)"
 
 eval "$(zoxide init --cmd cd zsh)"
 
