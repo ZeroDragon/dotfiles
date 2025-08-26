@@ -8,8 +8,7 @@ DIR="$D/dotfiles"
 # permite usar control + s y control + q para otras cosas
 stty -ixon
 
-# para el FZF dentro de VIM
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node_modules -g ""'
+alias vim="nvim"
 
 if [[ `uname` == "Linux" ]]; then
   source ~/dotfiles/zshrcWsl

@@ -3,5 +3,3 @@ source $ZSH/oh-my-zsh.sh
 
 # LS colors (referencia al mismo path donde está este archivo)
 . "$HOME/dotfiles/lscolors.sh"
-
-alias vim="nvim"
