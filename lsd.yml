@@ -1,0 +1,10 @@
+# setup with
+# ln -s ~/dotfiles/lsd ~/.config/lsd/config.yaml
+
+blocks:
+  # - permission
+  # - user
+  # - group
+  - size
+  # - date
+  - name
