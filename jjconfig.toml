@@ -1,0 +1,6 @@
+[user]
+name = "Carlos Flores"
+email = "carlos@floresbenavides.com"
+
+[ui]
+editor = "vim"
