@@ -1,3 +1,4 @@
+# ln -s ~/dotfiles/jjconfig.toml ~/.jjconfig.toml
 [user]
 name = "Carlos Flores"
 email = "carlos@floresbenavides.com"
