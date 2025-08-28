@@ -5,3 +5,4 @@ email = "carlos@floresbenavides.com"
 
 [ui]
 editor = "vim"
+pager = "none"
