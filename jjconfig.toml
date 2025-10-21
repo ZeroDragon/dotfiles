@@ -6,6 +6,38 @@ email = "carlos@floresbenavides.com"
 [ui]
 editor = "nvim"
 paginate = "never"
+default-command = "l"
 
 [git]
 push-new-bookmarks = true
+
+[aliases]
+l = ["log", "--reversed", "-Tlog1"]
+mm = ["bookmark", "move", "main", "--to"]
+
+
+[template-aliases]
+log1 = 'smlog(description.first_line(), bookmarks, tags)'
+
+'smlog(description, bookmarks, tags)' = '''
+if(root,
+  format_root_commit(self),
+  label(if(current_working_copy, "working_copy"),
+    concat(
+      separate(" ",
+        format_short_change_id_with_hidden_and_divergent_info(self),
+        if(bookmarks,surround("[","]",bookmarks),""),
+        tags,
+        working_copies,
+        if(git_head, label("git_head", "git_head()")),
+        if(conflict, label("conflict", "conflict")),
+        if(empty, label("empty", "(empty)")),
+        if(description,
+          description,
+          label(if(empty, "empty"), description_placeholder),
+        ),
+      ) ++ "\n",
+    ),
+  )
+)
+'''
