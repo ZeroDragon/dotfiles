@@ -14,6 +14,7 @@ push-new-bookmarks = true
 [aliases]
 l = ["log", "--reversed", "-Tlog1"]
 mm = ["bookmark", "move", "main", "--to"]
+a = ["log", "--reversed", "-Tlog1", "all()"]
 
 
 [template-aliases]
