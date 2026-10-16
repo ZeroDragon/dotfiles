@@ -30,3 +30,14 @@ command -v bat > /dev/null && alias cat='bat --pager=never'
 # LSD instalar con mise use lsd
 # Mejores colores de folders
 command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
+
+# Hermes Agent — ensure ~/.local/bin is on PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+export PATH=/Users/carlos/.opencode/bin:$PATH
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/carlos/.lmstudio/bin"
+# End of LM Studio CLI section
+
